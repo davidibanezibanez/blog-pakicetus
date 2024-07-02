@@ -1,27 +1,34 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from '../components/Home.vue';
-import PostDetails from '../components/PostDetails.vue';
+import Home from '../views/Home.vue';
 import Login from '../views/Login.vue';
+import Register from "../views/Register.vue";
+import PostComments from '@/views/PostComments.vue';
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
         {
-            path:'/login',
+            path:'/',
             name: 'login',
             component: Login
 
         },
         {
-            path: '/',
+            path: '/home',
             name: 'home',
             component: Home
         },
         {
-            path: '/post/:id',
-            name: 'postDetails',
-            component: PostDetails
-        }
+            path: '/register',
+            name: 'register',
+            component: Register
+        },
+        {
+            path: '/post/:postId/comments',
+            name: 'PostComments',
+            component: PostComments,
+            props: true
+          },
     ]
 });
 
