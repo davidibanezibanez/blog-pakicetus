@@ -1,18 +1,25 @@
 <template>
-  <div class="container">
-    <div class="row my-3">
-      <div class="col-md-10 mx-auto">
-        <Header></Header>
-        <router-view></router-view>
-      </div>
-    </div>
+  <div>
+    <Header2 v-if="showHeader2" />
+    <Header v-else />
+    <router-view />
   </div>
 </template>
 
-<script setup>
-  import Header from './components/Header.vue'
-  import router from './router'
-</script>
+<script>
+import Header from './components/Header.vue';
+import Header2 from './components/Header2.vue';
 
-<style>
-</style>
+export default {
+  components: {
+    Header,
+    Header2
+  },
+  computed: {
+    showHeader2() {
+      const path = this.$route.path;
+      return path === '/' || path === '/register';
+    }
+  }
+}
+</script>
