@@ -16,3 +16,4 @@ Frontend: VUE 3
 Para ejecutar el proyecto, por favor siga los siguientes pasos:
 Backend: En el apartado de maven, lifecycle, ejecute clean y install. Luego ejecute para clase principal del proyecto. En caso de existir error al iniciar el back-end repetir el proceso descrito anteriormente.
 Frontend: Ejecute npm install, y posteriormente npm run dev.
+Database: Por favor cree la base da datos previamente, llamada blog-pakicetus6, para que el ORM actualice las entidades.
